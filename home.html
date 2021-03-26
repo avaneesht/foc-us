@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home - Focus</title>
+  
+    <!--Meta charset-->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!--Links-->
+    <link rel="shortcut icon" type="image/x-icon" href="Foc-us.png"/>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <!--Scripts-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src='main.js'></script>
+</head>
+<body>
+  <!--Navigator-->
+    <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+
+      <div class="navbar-brand">
+          <a href="home.html" class="navbar-item">
+              <img src="Foc-us.png" alt="Foc-us' Logo" class="brand-logo">
+          </a>
+      </div>
+
+      <div class="navbar-start">
+
+        <a href="#timer_area" class="navbar-item">Start Focusing! 🧠</a>
+        <a href="#todo" class="navbar-item">Set your To-Do! 📅</a>
+        <a href="#soundboard" class="navbar-item">Play some calm sounds! 🎶</a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More 👈
+            </a>
+            
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="powered.html">
+                🔋 Powered By! 
+              </a>
+              <a class="navbar-item" href="faq.html">
+                ❓ FAQ! 
+              </a>
+
+              <hr class="navbar-divider">
+              <h3 class="navbar-item">
+                Report an issue to 👉 avaneesh1408@gmail.com
+              </h3>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <br>
+    <br>
+
+    <!--Timer Section-->
+    <section id="timer_area">
+      <article class="clock" id="model3">
+        <h1 id='timer_text'>Work Time!</h1>
+        <div class="count">
+          <div id="timer"></div>
+        </div>
+        <div class="container">
+          <button class="button is-success" id="start" onclick="start()">Start</button>
+          <button class="button is-danger" id="restart" onclick="restart()">Start again</button>
+        </div>
+      </article>
+    </section>
+    <br>
+    <hr>
+
+    <!--ToDo Section-->
+    <section id="todo">
+      <!--Todo List Input-->
+      <div class="todo_logo">
+        <p>Your<span class="styling"> Work List</span></p>
+
+        <br>
+
+        <div class="inputDiv">
+          <input type="text" class="input is-primary is-rounded txtb" placeholder='What do you want to finish?.....'>
+        </div>
+      </div>
+      <br>
+      <!--Todo List Items-->
+      <div class="container">
+        <div class="notComp">
+          <p><span class="styling">Not </span>Completed</p>
+        </div>
+
+        <br>
+
+        <div class="completed">
+          <p>Compl<span class="styling">eted</span></p>
+        </div>
+      </div>
+    </section>
+    <br>
+    <hr>
+
+    <!--Sounds Section-->
+    <section id="soundboard">
+
+      <div class="soundboard_logo">
+        <p><span class="styling">Aesthetic</span> sounds</p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="columns">
+            <div class="column">
+              <button class='button is-success is-large' id='leaves' onclick="leaves_audio()" ondblclick="pause_leaves()">Leaves Rustling</button>
+            </div>
+            <div class="column">
+              <button class='button is-info is-large' id='water' onclick="water_audio()" ondblclick="pause_water()">Water Flowing</button>
+            </div>
+            <div class="column">
+              <button class='button is-danger is-large' id='fire' onclick="fire_audio()" ondblclick="pause_fire()">Fire Crackling</button>
+            </div>
+            <div class="column">
+              <button class='button is-warning is-large' id='coffee' onclick="coffee_audio()" ondblclick="pause_coffee()">Coffee Shop</button>
+            </div>
+            <div class="column">
+              <button class='button is-link is-large' id='rain' onclick="rain_audio()" ondblclick="pause_audio()" ondblclick="pause_rain">Rain Drizzling</button>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <button class='button is-light is-large' id='airplane' onclick="airplane_audio()" ondblclick="pause_airplane()">Airplane Ambience</button>
+            <button class='button is-dark is-large' id='stop' onclick="pause_audio()">Stop All The Audio</button>
+        </div>
+      </div>
+    </section>
+
+</body>
+<script>
+$(".txtb").on("keyup", function (e) {
+  if (e.keyCode == 13 && $(".txtb").val() != "") {
+    var task = $("<div class='task'></div>").text($(".txtb").val());
+    var del = $("<i class='fas fa-trash'></i>").click(function () {
+      var p = $(this).parent();
+      p.fadeOut(function () {
+        p.remove();
+      });
+    });
+
+    var check = $("<i class='fas fa-check'></i>").click(function () {
+      var p = $(this).parent();
+      p.fadeOut(function () {
+        $(".completed").append(p);
+        p.fadeIn();
+      });
+      $(this).remove();
+    });
+
+    task.append(del, check);
+    $(".notComp").append(task);
+    //to clear the input
+    $(".txtb").val("");
+  }
+});
+</script>
+</html>

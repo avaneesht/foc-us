@@ -1,0 +1,110 @@
+/*Imports*/
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+/*Perm CSS*/
+body {
+    font-family: 'Inconsolata', monospace;
+}
+
+* {
+
+    font-family: 'Inconsolata', monospace;
+}
+
+hr {
+    margin-left: 100px;
+}
+
+p {
+    font-size: 48px;
+}
+
+/*Other CSS*/
+.brand-logo {
+    border-radius: 5px;
+}
+
+
+/*Timer CSS*/
+article {
+    width: 50%;
+    text-align: center;
+    background-color: #00D1B2;
+    border-radius: 10px;
+    margin: 50px auto 20px;
+    padding: 10px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px #ccc;
+}
+
+article h1 {
+    padding: 10px;
+    color: #fff;
+    font-size: 36px;
+}
+article .count {
+    padding: 5px;
+}
+article #timer{
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    background-color: whitesmoke;
+    border-radius: 2px;
+    font-size: 60px;
+    font-family: 'Inconsolata', cursive;
+}
+
+/*Todo List CSS*/
+
+.todo_logo {
+    text-align: center;
+}
+
+.styling {
+    font-weight: 900;
+    color: #00D1B2;
+}
+
+
+.inputDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.container p {
+    margin: 10px 0;
+}
+
+.task {
+    width: 100%;
+    background: aliceblue;
+    padding: 18px;
+    margin: 6px 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.task i {
+    float: right;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.completed .task {
+    background: #00D1B2;
+}
+
+/*Soundboard CSS*/
+.soundboard_logo {
+    text-align: center;
+}

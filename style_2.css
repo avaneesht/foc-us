@@ -1,0 +1,37 @@
+/*Imports*/
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+/*Perm CSS*/
+body {
+    font-family: 'Inconsolata', monospace;
+}
+
+* {
+
+    font-family: 'Inconsolata', monospace;
+}
+
+hr {
+    margin-left: 100px;
+}
+
+p {
+    font-size: 48px;
+}
+
+/*Custom CSS*/
+.brand-logo {
+    border-radius: 5px;
+}
+
+#bulma {
+    height: 20%;
+}
+
+#zapsplat {
+    height: 25%;
+}
+
+#netlify {
+    height: 25%;
+}
